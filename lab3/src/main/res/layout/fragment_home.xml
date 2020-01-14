@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.lab3.viewmodel.HomeViewModel" />
+
+        <variable
+            name="handler"
+            type="com.example.lab3.HomeFragment.Handler" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:max="@{viewModel.duration}"
+            android:onProgressChanged="@{viewModel.onProgressChanged}"
+            android:onStopTrackingTouch="@{viewModel.onStopTrackingTouch}"
+            android:onStartTrackingTouch="@{viewModel.onStartTrackingTouch}"
+            android:progress="@{viewModel.progress}"
+            app:layout_constraintEnd_toEndOf="@id/videoView"
+            app:layout_constraintStart_toStartOf="@id/videoView"
+            app:layout_constraintTop_toBottomOf="@id/videoView" />
+
+        <TextView
+            android:id="@+id/textProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@id/seekBar"
+            app:layout_constraintStart_toStartOf="@id/seekBar"
+            app:layout_constraintTop_toBottomOf="@id/seekBar"
+            app:progressTime="@{viewModel.progress}" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="@{viewModel.onClickPlayButton}"
+            app:isPlaying="@{viewModel.isPlaying}"
+            app:layout_constraintBottom_toTopOf="@id/videoView"
+            app:layout_constraintEnd_toEndOf="@id/videoView"
+            app:layout_constraintStart_toStartOf="@id/videoView"
+            android:clickable="true"
+            android:focusable="true"
+            app:lottie_autoPlay="false"
+            app:lottie_colorFilter="#000"
+            app:lottie_rawRes="@raw/playstop" />
+
+        <Button
+            android:id="@+id/buttonDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> handler.onButtonDialogClick()}"
+            android:layout_marginTop="20dp"
+            android:text="@string/show_image"
+            app:layout_constraintTop_toBottomOf="@id/textProgress"
+            app:layout_constraintStart_toStartOf="@id/textProgress"
+            app:layout_constraintEnd_toEndOf="@id/textProgress"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

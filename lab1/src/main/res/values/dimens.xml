@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_standart">20dp</dimen>
+    <dimen name="margin_label_alpha_bottom">10dp</dimen>
+    <dimen name="margin_alpha_left">10dp</dimen>
+</resources>

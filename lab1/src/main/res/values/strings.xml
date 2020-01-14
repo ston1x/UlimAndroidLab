@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab1</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_alpha">Alpha:</string>
+    <string name="text_naruto">Naruto</string>
+    <string name="button_make_visible">Make visible</string>
+    <string name="button_make_invisible">Make invisible</string>
+    <string name="text_rotate">Rotate</string>
+</resources>

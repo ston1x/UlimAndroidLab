@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">#FB8C00</item>
+        <item name="colorOnPrimary">#FAFAFA</item>
+        <item name="colorSecondary">#E65100</item>
+        <item name="colorOnSecondary">#FAFAFA</item>
+    </style>
+
+</resources>
